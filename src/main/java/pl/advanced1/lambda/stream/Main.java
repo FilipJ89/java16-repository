@@ -1,6 +1,7 @@
 package pl.advanced1.lambda.stream;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -22,7 +23,6 @@ public class Main {
         List<Order> orderList = Arrays.asList(order1,order2);
         System.out.println(getIngredientsNamesLambda(orderList));
         System.out.println(getIngredientsPrice(orderList));
-
     }
 
     public static List<String> getIngredientsNamesLambda(List<Order> orders) {
@@ -51,4 +51,5 @@ public class Main {
                 .map(item -> item.getPrice())
                 .reduce(BigDecimal.ZERO, (price1, price2) -> price1.add(price2));
     }
+
 }
